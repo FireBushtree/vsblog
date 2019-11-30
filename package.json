@@ -7,7 +7,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "lint:style": "vue-cli-service lint:style",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "prettier": "prettier --write src/**/*.{js,vue,ts,scss}"
   },
   "dependencies": {
     "core-js": "^3.4.3",
@@ -32,6 +33,7 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "lint-staged": "^9.4.3",
+    "prettier": "^1.19.1",
     "sass": "^1.23.7",
     "sass-loader": "^8.0.0",
     "stylelint-config-primer": "^2.2.5",
@@ -42,6 +44,10 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
+    "src/**/*.{js,vue,ts,scss}": [
+      "prettier --write src/**/*.{js,vue,ts,scss}",
+      "git add"
+    ],
     "*.{js,vue,ts}": [
       "vue-cli-service lint",
       "git add"
