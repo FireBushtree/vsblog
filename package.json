@@ -44,7 +44,7 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "src/**/*.{js,vue,ts,scss}": [
+    "*.{js,vue,ts,scss}": [
       "prettier --write src/**/*.{js,vue,ts,scss}",
       "git add"
     ],
