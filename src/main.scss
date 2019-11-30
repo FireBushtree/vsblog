@@ -1,0 +1,10 @@
+/* stylelint-disable */
+#app {
+  height: 100vh;
+
+  > .container {
+    height: 100vh;
+  }
+}
+
+@import "./styles/index.scss";
