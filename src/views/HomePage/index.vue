@@ -4,7 +4,15 @@
       <menu-bar></menu-bar>
     </div>
 
-    <div class="home-page-body"></div>
+    <div class="home-page-body">
+      <div class="home-page-body-tools"></div>
+
+      <div class="home-page-body-menus"></div>
+
+      <div class="home-page-body-content">
+        <vs-playground></vs-playground>
+      </div>
+    </div>
 
     <div class="home-page-footer">
       <footer-bar></footer-bar>
@@ -16,11 +24,13 @@
 import { Vue, Component } from 'vue-property-decorator';
 import MenuBar from '@/components/MenuBar/index.vue';
 import FooterBar from '@/components/FooterBar/index.vue';
+import VsPlayground from '@/components/VsPlayground/index.vue';
 
 @Component({
   components: {
     MenuBar,
     FooterBar,
+    VsPlayground,
   },
 })
 export default class HomePage extends Vue {

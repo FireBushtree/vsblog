@@ -1,0 +1,9 @@
+.clear-fix {
+  display: block;
+  height: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  clear: both;
+  visibility: hidden;
+  content: "";
+}

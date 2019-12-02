@@ -1,8 +1,24 @@
 .home-page {
   display: flex;
+  color: $color--text--main;
   flex-direction: column;
 
   &-body {
     flex: 1;
+    display: flex;
+
+    &-tools {
+      width: 48px;
+      background: $color--bg--bar;
+    }
+
+    &-menus {
+      width: 340px;
+      background: $color--bg--menu;
+    }
+
+    &-content {
+      flex: 1;
+    }
   }
 }

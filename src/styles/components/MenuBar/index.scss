@@ -1,4 +1,23 @@
 .menu-bar {
-  height: 30px;
-  border: 1px solid #000;
+  $menuBarHeight: 30px;
+
+  height: $menuBarHeight;
+  background: $color--bg--top;
+
+  &-body {
+    float: left;
+    margin: 0;
+    list-style: none;
+  }
+
+  &-title {
+    height: 100%;
+    margin: 0 auto;
+    line-height: $menuBarHeight;
+    text-align: center;
+  }
+
+  &-actions {
+    float: right;
+  }
 }
