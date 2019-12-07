@@ -6,7 +6,17 @@
     <div class="menu-bar-title">
       - Fire Bush Tree's Blog
     </div>
-    <div class="menu-bar-actions"></div>
+    <div class="menu-bar-actions">
+      <div class="menu-bar-action">
+        <i class="icon-min"></i>
+      </div>
+      <div class="menu-bar-action">
+        <i class="icon-max is-full"></i>
+      </div>
+      <div class="menu-bar-action">
+        <i class="icon-close"></i>
+      </div>
+    </div>
   </div>
 </template>
 

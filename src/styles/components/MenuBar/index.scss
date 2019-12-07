@@ -1,23 +1,51 @@
 .menu-bar {
   $menuBarHeight: 30px;
 
+  position: relative;
   height: $menuBarHeight;
   background: $color--bg--top;
 
   &-body {
-    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $menuBarHeight;
     margin: 0;
+    line-height: $menuBarHeight;
     list-style: none;
   }
 
   &-title {
     height: 100%;
     margin: 0 auto;
+    font-size: 10px;
     line-height: $menuBarHeight;
     text-align: center;
   }
 
   &-actions {
-    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    height: $menuBarHeight;
+    line-height: $menuBarHeight;
+  }
+
+  &-action {
+    display: flex;
+    width: 48px;
+    height: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background: $color--bg-bar-action-hover;
+    }
+
+    &:last-child:hover {
+      background: $color--red;
+    }
   }
 }

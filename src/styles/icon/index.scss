@@ -1,0 +1,64 @@
+$icon--prefix: ".icon-";
+
+#{$icon--prefix}min {
+  width: 14px;
+  height: 2px;
+  background: $color--white;
+}
+
+#{$icon--prefix}max {
+  $maxLength: 7px;
+
+  position: relative;
+  width: $maxLength;
+  height: $maxLength;
+  border: 2px solid $color--white;
+
+  &.is-full {
+    top: -1px;
+    left: 1px;
+    border-width: 1px;
+
+    &::after {
+      position: absolute;
+      top: 1px;
+      left: -3px;
+      width: $maxLength;
+      height: $maxLength;
+      content: "";
+      background: $color--bg--top;
+      border: 1px solid $color--white;
+    }
+  }
+}
+
+#{$icon--prefix}close {
+  $wrapperLength: 20px;
+  $lineWidth: 16px;
+  $lineHight: 2px;
+
+  position: relative;
+  width: $wrapperLength;
+  height: $wrapperLength;
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $lineWidth;
+    height: $lineHight;
+    margin-top: -$lineHight / 2;
+    margin-left: -$lineWidth / 2;
+    content: "";
+    background: #fff;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
