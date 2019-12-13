@@ -5,7 +5,9 @@
     </div>
 
     <div class="home-page-body">
-      <div class="home-page-body-tools"></div>
+      <div class="home-page-body-tools">
+        <tool-bar></tool-bar>
+      </div>
 
       <div class="home-page-body-menus"></div>
 
@@ -24,10 +26,12 @@
 import { Vue, Component } from 'vue-property-decorator';
 import MenuBar from '@/components/MenuBar/index.vue';
 import FooterBar from '@/components/FooterBar/index.vue';
+import ToolBar from '@/components/ToolBar/index.vue';
 import VsPlayground from '@/components/VsPlayground/index.vue';
 
 @Component({
   components: {
+    ToolBar,
     MenuBar,
     FooterBar,
     VsPlayground,

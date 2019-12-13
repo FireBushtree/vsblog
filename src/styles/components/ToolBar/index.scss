@@ -1,0 +1,44 @@
+.tool-bar {
+  height: 100%;
+  box-sizing: border-box;
+  padding-top: 5px;
+
+  &-top {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &-item {
+    position: relative;
+    display: flex;
+    height: 42px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    filter: grayscale(100%);
+
+    &:hover,
+    &.is-active {
+      filter: none;
+    }
+
+    &.is-active::before {
+      position: absolute;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      content: "";
+      background: $color--white;
+      filter: none;
+    }
+
+    &__icon {
+      $imgLength: 30px;
+
+      width: $imgLength;
+      height: $imgLength;
+      cursor: pointer;
+    }
+  }
+}
