@@ -33,7 +33,7 @@ interface Tool {
 
 @Component
 export default class ToolBar extends Vue {
-  private tools: Array<Tool> = [
+  tools: Array<Tool> = [
     { name: 'js', icon: iconJs, isActive: false },
     { name: 'css', icon: iconCss, isActive: false },
     { name: 'vue', icon: iconVue, isActive: false },
