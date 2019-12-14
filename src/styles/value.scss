@@ -1,6 +1,6 @@
+$color--red: #f00;
 $color--white: #fff;
 $color--black: #000;
-$color--red: #f00;
 
 $color--bg--playground: #1e1e1e;
 $color--bg--bar: lighten($color--bg--playground, 7%);
@@ -8,3 +8,5 @@ $color--bg-bar-action-hover: lighten($color--bg--bar, 10%);
 $color--bg--top: lighten($color--bg--playground, 10%);
 $color--bg--menu: lighten($color--bg--playground, 0.8%);
 $color--bg--bottom: #007acc;
+
+$height--tab: 36px;

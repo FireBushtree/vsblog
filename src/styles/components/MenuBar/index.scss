@@ -10,9 +10,7 @@
     top: 0;
     left: 0;
     height: $menuBarHeight;
-    margin: 0;
     line-height: $menuBarHeight;
-    list-style: none;
   }
 
   &-title {
@@ -33,12 +31,11 @@
   }
 
   &-action {
-    display: flex;
+    @include flex-center;
+
     width: 48px;
     height: 100%;
     box-sizing: border-box;
-    align-items: center;
-    justify-content: center;
 
     &:hover {
       background: $color--bg-bar-action-hover;

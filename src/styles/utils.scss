@@ -1,3 +1,10 @@
+/* stylelint-disable-next-line */
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
 .clear-fix {
   display: block;
   height: 0;
@@ -6,4 +13,24 @@
   clear: both;
   visibility: hidden;
   content: "";
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin arrow($length: 3px, $width: 1px) {
+  position: relative;
+  top: -$length / 2;
+  left: -$length / 2;
+  display: inline-block;
+  padding: $length;
+  border: solid $color--white;
+  border-width: 0 $width $width 0;
+
+  &.is-right {
+    transform: rotate(-45deg);
+  }
 }

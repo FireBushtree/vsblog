@@ -18,39 +18,44 @@
     <div class="tool-bar-bottom"></div>
   </div>
 </template>
-<script>
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator';
+import { VNode } from 'vue';
 import iconJs from '@/assets/images/icon_js.svg';
 import iconCss from '@/assets/images/icon_css.svg';
 import iconVue from '@/assets/images/icon_vue.svg';
 
-export default {
-  name: 'ToolBar',
-  data() {
-    return {
-      currentTool: {},
-      tools: [
-        { name: 'js', icon: iconJs, isActive: false },
-        { name: 'css', icon: iconCss, isActive: false },
-        { name: 'vue', icon: iconVue, isActive: false },
-      ],
-    };
-  },
-  methods: {
-    setCurrentTool(tool) {
-      // 1. close last tool's active status
-      this.currentTool.isActive = false;
+interface Tool {
+  name: string,
+  isActive: Boolean,
+  icon: VNode
+}
 
-      // 2. set the new tool
-      this.currentTool = tool;
-      this.currentTool.isActive = true;
+@Component
+export default class ToolBar extends Vue {
+  private tools: Array<Tool> = [
+    { name: 'js', icon: iconJs, isActive: false },
+    { name: 'css', icon: iconCss, isActive: false },
+    { name: 'vue', icon: iconVue, isActive: false },
+  ];
 
-      // 3. emit event
-      this.$emit('change', this.currentTool);
-    },
-  },
+  currentTool: Tool = {} as Tool;
+
+  setCurrentTool(tool: Tool): void {
+    // 1. close last tool's active status
+    this.currentTool.isActive = false;
+
+    // 2. set the new tool
+    this.currentTool = tool;
+    this.currentTool.isActive = true;
+
+    // 3. emit event
+    this.$emit('change', this.currentTool);
+  }
+
   created() {
     const [firstTool] = this.tools;
     this.setCurrentTool(firstTool);
-  },
-};
+  }
+}
 </script>

@@ -9,7 +9,9 @@
         <tool-bar></tool-bar>
       </div>
 
-      <div class="home-page-body-menus"></div>
+      <div class="home-page-body-explorer">
+        <explorer-bar></explorer-bar>
+      </div>
 
       <div class="home-page-body-content">
         <vs-playground></vs-playground>
@@ -25,8 +27,9 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
 import MenuBar from '@/components/MenuBar/index.vue';
-import FooterBar from '@/components/FooterBar/index.vue';
 import ToolBar from '@/components/ToolBar/index.vue';
+import FooterBar from '@/components/FooterBar/index.vue';
+import ExplorerBar from '@/components/ExplorerBar/index.vue';
 import VsPlayground from '@/components/VsPlayground/index.vue';
 
 @Component({
@@ -34,6 +37,7 @@ import VsPlayground from '@/components/VsPlayground/index.vue';
     ToolBar,
     MenuBar,
     FooterBar,
+    ExplorerBar,
     VsPlayground,
   },
 })

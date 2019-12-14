@@ -3,18 +3,11 @@
   box-sizing: border-box;
   padding-top: 5px;
 
-  &-top {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-
   &-item {
+    @include flex-center;
+
     position: relative;
-    display: flex;
     height: 42px;
-    justify-content: center;
-    align-items: center;
     margin-bottom: 16px;
     filter: grayscale(100%);
 

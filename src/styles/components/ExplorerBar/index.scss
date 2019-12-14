@@ -1,0 +1,31 @@
+.explorer-bar {
+  &-title {
+    $font-size: 10px;
+
+    height: $height--tab;
+    padding-left: 20px;
+    font-size: $font-size;
+    line-height: $height--tab;
+  }
+
+  &-item {
+    $item-height: 24px;
+
+    display: flex;
+    height: $item-height;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: $item-height;
+    background: $color--bg--top;
+
+    > .icon {
+      @include flex-center;
+
+      width: 20px;
+
+      .arrow {
+        @include arrow();
+      }
+    }
+  }
+}
