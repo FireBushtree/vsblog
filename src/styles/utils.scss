@@ -1,3 +1,12 @@
+.inner-border {
+  box-sizing: border-box;
+  box-shadow: 0 0 0 1px transparent inset;
+}
+
+.is-border-blue {
+  box-shadow: 0 0 0 1px $color--bg--bottom inset;
+}
+
 /* stylelint-disable-next-line */
 ul {
   padding: 0;

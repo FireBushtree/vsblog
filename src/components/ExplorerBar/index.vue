@@ -29,7 +29,10 @@
 
         <div
           v-if="resource.isExpand"
-          class="explorer-bar-item-content"
+          :class="[
+            'explorer-bar-item-content',
+            constants.innerBorder
+          ]"
         >
         </div>
       </li>
@@ -38,6 +41,7 @@
 </template>
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
+import CONSTANTS from '@/constants';
 
 interface Resource {
   name: string,
@@ -46,6 +50,10 @@ interface Resource {
 
 @Component
 export default class Explorer extends Vue {
+  constants = {
+    innerBorder: CONSTANTS.INNER_BORDER,
+  };
+
   resources: Array<Resource> = [
     { name: 'VSBLOG', isExpand: false },
     { name: 'NPM SCRIPT', isExpand: false },

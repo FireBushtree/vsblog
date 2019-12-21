@@ -32,6 +32,9 @@ import FooterBar from '@/components/FooterBar/index.vue';
 import ExplorerBar from '@/components/ExplorerBar/index.vue';
 import VsPlayground from '@/components/VsPlayground/index.vue';
 
+import { debounce } from '@/utils';
+import CONSTANTS from '@/constants';
+
 @Component({
   components: {
     ToolBar,
@@ -43,5 +46,41 @@ import VsPlayground from '@/components/VsPlayground/index.vue';
 })
 export default class HomePage extends Vue {
   name: string = 'owen';
+
+  // eslint-disable-next-line class-methods-use-this
+  created() {
+    let prevTarget: Element | undefined;
+
+    document.addEventListener('click', debounce((event: Event) => {
+      if (!(event.target instanceof Element)) {
+        return;
+      }
+
+      // 1. click the same dom twice
+      if (event.target === prevTarget) {
+        return;
+      }
+
+      const { classList } = event.target;
+      const isNeedSetBorder = classList.contains(CONSTANTS.INNER_BORDER);
+
+      // 2. has the flag maybe set border
+      if (prevTarget && !isNeedSetBorder) {
+        prevTarget.classList.remove(CONSTANTS.IS_BORDER_BLUE);
+        prevTarget = undefined;
+        return;
+      }
+
+      if (isNeedSetBorder) {
+        classList.add(CONSTANTS.IS_BORDER_BLUE);
+
+        if (prevTarget) {
+          prevTarget.classList.remove(CONSTANTS.IS_BORDER_BLUE);
+        }
+
+        prevTarget = event.target;
+      }
+    }));
+  }
 }
 </script>
