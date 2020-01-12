@@ -35,6 +35,7 @@
               constants.innerBorder
             ]"
           >
+            <vue-tree></vue-tree>
           </div>
         </li>
       </ul>
@@ -44,6 +45,7 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
 import CONSTANTS from '@/constants';
+import VueTree from '@/components/VueTree/index.vue';
 import VueResize from '@/components/VueResize/index.vue';
 
 interface Resource {
@@ -52,7 +54,7 @@ interface Resource {
 }
 
 @Component({
-  components: { VueResize },
+  components: { VueTree, VueResize },
 })
 export default class Explorer extends Vue {
   constants = {
